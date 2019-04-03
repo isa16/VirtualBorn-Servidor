@@ -1,0 +1,32 @@
+{
+  "name": "VirtualBorn",
+  "version": "1.0.0",
+  "description": "Este repositório contém os códigos utilizados para a criação de um aplicativo nativo, resultante de um trabalho de conclusão de curso.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isa16/VirtualBorn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isa16/VirtualBorn/issues"
+  },
+  "homepage": "https://github.com/isa16/VirtualBorn#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.21",
+    "mongoose-paginate": "^5.0.3",
+    "mongose": "0.0.2-security",
+    "require": "^2.4.20",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
