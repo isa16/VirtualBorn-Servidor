@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const mongossePaginate = require('mongoose-paginate');
 
-const ConsultaSchema = new mongoose.Schema({
+const ProfessorSchema = new mongoose.Schema({
     nome_prof: {
         type: String,
         required: true,
@@ -17,6 +17,7 @@ const ConsultaSchema = new mongoose.Schema({
     },
 });
 
-ConsultaSchema.plugin(mongossePaginate);
+ProfessorSchema.plugin(mongossePaginate);
 
-mongoose.model('Consulta', ConsultaSchema);
+mongoose.model('Professor', ProfessorSchema);
+

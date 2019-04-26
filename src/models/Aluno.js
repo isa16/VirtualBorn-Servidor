@@ -19,19 +19,7 @@ const AlunoSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    sexo: { 
-        type: String,
-        required: true,
-    },
-    etnia: {
-        type: String,
-        required: true,
-    },
-    corCabelo: {
-        type: String,
-        required: true,
-    },
-    corOlho: {
+    sexo: {
         type: String,
         required: true,
     },

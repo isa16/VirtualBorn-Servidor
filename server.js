@@ -9,7 +9,7 @@ api.use(express.json());
 
 mongoose
   .connect(
-    'mongodb+srv://icrivelli:icrivelli123@pdm1-niovw.mongodb.net/test?retryWrites=true',
+    'mongodb+srv://milena:Mi15050425!@cluster0-xvu0q.mongodb.net/test?retryWrites=true',
     {
       useNewUrlParser: true
     })
@@ -19,6 +19,7 @@ mongoose
 requireDir('./src/models');
 
 // Rotas
-api.use('/api', require('./src/routes'));
+api.use('/api', require('./src/routes/routesAluno'));
+api.use('/api', require('./src/routes/routesProfessor'));
 
 api.listen(3001);

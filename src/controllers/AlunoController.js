@@ -1,7 +1,7 @@
 //parte do controllador do professor
-const mongoose = require('mongose');
+const mongoose = require('mongoose');
 
-const Aluno = mongoose.mode('Aluno');
+const Aluno = mongoose.model('Aluno');
 
 module.exports = {
     async index(req, res) {
@@ -11,25 +11,25 @@ module.exports = {
         return res.json(alunos);
     },
 
-    async show(req, res) {
+    async listar(req, res) {//show
         const aluno = await Aluno.finById(req.params.id);//parametro é o id
 
         return res.json(aluno);
     },
 
-    async store(req, res) {
+    async criar(req, res) { //store
         const aluno = await Aluno.create(req.body);
 
         return res.json(aluno);
     },
 
-    async update(req, res) {
+    async atualizar(req, res) { //update
         const alunor = await Aluno.finByIdAndUpdate(req.params.id, req.body, { new: true });
 
         return res.json(aluno);
     },
 
-    async destroy(req, res) {
+    async remover(req, res) {
         await Aluno.finByIdAndRemove(req.params.id);
 
         return res.send();
