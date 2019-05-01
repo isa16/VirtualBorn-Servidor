@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 
-const BebeSchema = new mongoose.Schema({
+const TurmaSchema = new mongoose.Schema({
     titulo: {
         type: String,
         required: true,
@@ -10,12 +10,15 @@ const BebeSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    id:[],
+    professor:{
+        type: String,
+        required: true,
+    },
     aluno:[],
-    professor:[],
+    
 })
 
-BebeSchema.plugin(mongoosePaginate)
+TurmaSchema.plugin(mongoosePaginate)
 
-mongoose.model('Bebe', BebeSchema)
+mongoose.model('Turma', TurmaSchema)
   

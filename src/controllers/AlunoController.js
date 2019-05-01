@@ -12,7 +12,7 @@ module.exports = {
     },
 
     async listar(req, res) {//show
-        const aluno = await Aluno.finById(req.params.id);//parametro é o id
+        const aluno = await Aluno.findById(req.params.id);//parametro é o id
 
         return res.json(aluno);
     },
@@ -24,13 +24,13 @@ module.exports = {
     },
 
     async atualizar(req, res) { //update
-        const alunor = await Aluno.finByIdAndUpdate(req.params.id, req.body, { new: true });
+        const aluno = await Aluno.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
         return res.json(aluno);
     },
 
     async remover(req, res) {
-        await Aluno.finByIdAndRemove(req.params.id);
+        await Aluno.findByIdAndRemove(req.params.id);
 
         return res.send();
     }

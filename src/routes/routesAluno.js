@@ -2,7 +2,7 @@
 const express = require('express');
 const routes = express.Router();
 
-const AlunoController =  require('../controllers/AlunoController.js')
+const AlunoController =  require('../controllers/AlunoController')
 
 routes.get('/alunos', AlunoController.index)
 routes.get('/aluno/:id', AlunoController.listar)
