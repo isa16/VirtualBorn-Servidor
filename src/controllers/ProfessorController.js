@@ -5,14 +5,13 @@ const Professor = mongoose.model('Professor');
 
 module.exports = {
     async index(req, res) {
-        const { page = 1 } = req.query;
-        const professores = Professor.paginate({}, { page, limit: 5 });
+        const professores = await Professor.find({});
 
         return res.json(professores);
     },
 
     async listar(req, res) {
-        const professor = await Professor.finById(req.params.id);//parametro é o id
+        const professor = await Professor.findById(req.params.id);//parametro é o id
 
         return res.json(professor);
     },
@@ -24,13 +23,13 @@ module.exports = {
     },
 
     async atualizar(req, res) {
-        const professor = await Professor.finByIdAndUpdate(req.params.id, req.body, { new: true });
+        const professor = await Professor.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
         return res.json(professor);
     },
 
     async remover(req, res) {
-        await Professor.finByIdAndRemove(req.params.id);
+        await Professor.findByIdAndRemove(req.params.id);
 
         return res.send();
     }

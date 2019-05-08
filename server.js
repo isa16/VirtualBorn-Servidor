@@ -9,7 +9,7 @@ api.use(express.json());
 
 mongoose
   .connect(
-    'mongodb://localhost:27017/virtualborn',
+    'mongodb+srv://icrivelli:isabela1234@pdm1-niovw.mongodb.net/test?retryWrites=true',
     {
       useNewUrlParser: true
     })

@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const mongossePaginate = require('mongoose-paginate');
 
 const ProfessorSchema = new mongoose.Schema({
-    nome_prof: {
+    nome: {
         type: String,
         required: true,
     },
-    email_prof: {
+    email: {
         type: String,
         required: true,
     },
-    senha_prof: {
+    senha: {
         type: String,
         required: true,
     },
