@@ -1,0 +1,9 @@
+{
+    "driver": "smtp",
+    "host": "smtp.mailtrap.io",
+    "port":  2525,
+    "user": null,
+    "pass": null
+
+
+}

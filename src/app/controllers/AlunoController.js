@@ -1,6 +1,5 @@
 //parte do controllador do professor
 const mongoose = require('mongoose');
-
 const Aluno = mongoose.model('Aluno');
 
 module.exports = {

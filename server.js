@@ -2,10 +2,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
+const bodyParser = require("body-parser");
 
-
+const app = express();
 const api = express();
 api.use(express.json());
+
+app.use(bodyParser.json()); // entender requisições em .json
+app.use(bodyParser.urlencoded({ extended: false })); // fazer o decode de parâmetros enviados via url
+
+
 
 mongoose
   .connect(
@@ -16,13 +22,15 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-requireDir('./src/models');
-
 // Rotas
-api.use('/api', require('./src/routes/routesAluno'));
-api.use('/api', require('./src/routes/routesProfessor'));
-api.use('/api', require('./src/routes/routesBebe'));
-api.use('/api', require('./src/routes/routesTurma'));
+app.use("/auth", require("./src/app/routes/authRouter"));
+app.use("/project", require("./src/app/routes/projectRouter"));
+
+app.use('/api', require('./src/app/routes/routesAluno'));
+app.use('/api', require('./src/app/routes/routesProfessor'));
+app.use('/api', require('./src/app/routes/routesBebe'));
+app.use('/api', require('./src/app/routes/routesTurma'));
+
 
 
 api.listen(3001);

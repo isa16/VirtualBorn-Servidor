@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/isa16/VirtualBorn#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
     "json-stringify-safe": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.4",
     "mongoose-paginate": "^5.0.3",
     "mongose": "0.0.2-security",
+    "nodemailer": "^6.2.1",
+    "nodemailer-express-handlebars": "^3.0.0",
     "require": "^2.4.20",
     "require-dir": "^1.2.0"
   },

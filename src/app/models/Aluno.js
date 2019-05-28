@@ -10,7 +10,7 @@ const AlunoSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    mail: {
+    email: {
         type: String,
         required: true,
     },
