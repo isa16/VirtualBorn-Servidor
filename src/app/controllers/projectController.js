@@ -9,6 +9,9 @@ router.use(authMiddleware);
 
 const list = async (req, res) => {
     res.send({ ok: true, user: req.userId });
+    const user = await User.findById(req.params.tipoU);//parametro é o id
+
+   return res.json(user);
 };
 
 module.exports = { list };

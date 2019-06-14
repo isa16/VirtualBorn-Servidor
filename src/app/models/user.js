@@ -2,7 +2,17 @@ const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  name: {
+  tipoU: {
+    type: String,
+    required: true
+  },
+  relatorio: [{
+    type: String
+  }],
+  feedback: {
+    type: String
+  },
+  nome: {
     type: String,
     required: true
   },
@@ -21,14 +31,57 @@ const UserSchema = new mongoose.Schema({
     type: String,
     select: false,
   },
-  passwordResetExpires:{
+  passwordResetExpires: {
     type: Date,
     select: false,
   },
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  dataNasc: {
+    type: Date,
+    default: Date.now,
+  },
+  sexo: {
+    type: String,
+  },
+  erros: {
+    type: Number,
+  },
+  acertos: {
+    type: Number,
+  },
+  bebe: {
+    pais: {
+      mae: {
+        etniaM: {
+          type: String,
+        },
+        corCabeloM: {
+          type: String,
+        },
+        corOlhoM: {
+          type: String,
+        },
+      },
+      pai: {
+        etniaP: {
+          type: String,
+        },
+        corCabeloP: {
+          type: String,
+        },
+        corOlhoP: {
+          type: String,
+        },
+      }
+    }
+  },
+  turma: {
+    type: String,
+  },
+  turmaP: [],
 });
 
 UserSchema.pre("save", async function (next) {
@@ -39,5 +92,4 @@ UserSchema.pre("save", async function (next) {
 });
 
 const User = mongoose.model("User", UserSchema);
-
 module.exports = User;

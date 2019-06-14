@@ -2,10 +2,10 @@
   "name": "VirtualBorn",
   "version": "1.0.0",
   "description": "Este repositório contém os códigos utilizados para a criação de um aplicativo nativo, resultante de um trabalho de conclusão de curso.",
-  "main": "server.js",
+  "main": "/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon src"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "json-stringify-safe": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.4",
@@ -28,6 +29,7 @@
     "mongose": "0.0.2-security",
     "nodemailer": "^6.2.1",
     "nodemailer-express-handlebars": "^3.0.0",
+    "path": "^0.12.7",
     "require": "^2.4.20",
     "require-dir": "^1.2.0"
   },
