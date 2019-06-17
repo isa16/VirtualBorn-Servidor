@@ -128,44 +128,50 @@ const reset_password = async (req, res) => {
 
 };
 
-const relatorio = (req, res) => {
+const relatorio = async (req, res) => {
+
     try {
-        const user = User.findByIdAndUpdate(req.userId, {
-            $push: { relatorio: req.body }
+        const user = await User.findByIdAndUpdate(req.userId,
+            { $push: { relatorio: req.body } }, { new: true });
+
+        res.send({ user });
+    } catch (err) {
+        res.status(400).send({ 'erro': "Erro ao atualizar usuário" })
+        console.log(err)
+    }
+
+}
+
+const feedback = async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.userId, {
+            '$set': {
+                feedback: req.body.feedback
+            }
         }, { new: true })
         res.send({ user })
-    } catch{
+    } catch (err) {
+        res.status(400).send({ "erro: ": "Erro ao cadastrar feedback" })
         console.log(err)
     }
 }
 
-const feedback = (req, res) => {
+const mostrarRelatorio = async (req, res) => {
     try {
-        const user = User.findByIdAndUpdate(req.userId, {
-            '$set': { feedback: req.body }
-        }, { new: true })
-        res.send({ user })
-    } catch{
+        const buscaRelatorio = await User.findOne({ nome: req.body.nome });
+
+        res.send(buscaRelatorio.relatorio)
+    } catch (err) {
         console.log(err)
     }
 }
 
-const mostrarRelatorio = (req, res) => {
+const mostrarFeedback = async (req, res) => {
     try {
-        const buscaRelatorio = User.findOne(req.body.nome);
+        const buscaFeedback = await User.findOne({ nome: req.body.nome });
 
-        res.send(buscaRelatorio)
-    } catch{
-        console.log(err)
-    }
-}
-
-const mostrarFeedback = (req, res) => {
-    try {
-        const buscaFeedback = User.findOne(req.body.nome);
-
-        res.send(buscaFeedback)
-    } catch{
+        res.send(buscaFeedback.feedback)
+    } catch (err) {
         console.log(err)
     }
 }
@@ -173,35 +179,5 @@ const mostrarFeedback = (req, res) => {
 
 
 module.exports = {
-    // async index(req, res) {
-    //     const { page = 1 } = req.query;
-    //     const alunos = Aluno.paginate({}, { page, limit: 5 });
-
-    //     return res.json(alunos);
-    // },
-
-    // async listar(req, res) {//show
-    //     const user = await User.findById(req.params.turma);//parametro é a turma
-
-    //     return res.json(user);
-    // },
-
-    // async criar(req, res) { //store
-    //     const aluno = await Aluno.create(req.body);
-
-    //     return res.json(aluno);
-    // },
-
-    // async atualizar(req, res) { //update
-    //     const aluno = await Aluno.findByIdAndUpdate(req.params.id, req.body, { new: true });
-
-    //     return res.json(aluno);
-    // },
-
-    // async remover(req, res) {
-    //     await Aluno.findByIdAndRemove(req.params.id);
-
-    //     return res.send();
-    // },
     register, authenticate, forgot_password, reset_password, relatorio, feedback, mostrarRelatorio, mostrarFeedback
 };

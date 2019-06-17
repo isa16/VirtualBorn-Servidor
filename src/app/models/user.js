@@ -6,9 +6,17 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
   relatorio: [{
-    type: String
+    parecer: {
+      type: String,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now
+    }
   }],
+
   feedback: {
     type: String
   },
