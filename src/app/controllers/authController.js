@@ -170,7 +170,7 @@ const mostrarFeedback = async (req, res) => {
     try {
         const buscaFeedback = await User.findOne({ nome: req.body.nome });
 
-        res.send(buscaFeedback.feedback)
+        res.send(buscaFeedback)
     } catch (err) {
         console.log(err)
     }
