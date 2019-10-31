@@ -24,7 +24,7 @@
     "fs": "0.0.1-security",
     "json-stringify-safe": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.4",
+    "mongoose": "^5.7.5",
     "mongoose-paginate": "^5.0.3",
     "mongose": "0.0.2-security",
     "nodemailer": "^6.2.1",
