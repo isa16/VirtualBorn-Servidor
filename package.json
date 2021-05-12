@@ -27,7 +27,7 @@
     "mongoose": "^5.5.4",
     "mongoose-paginate": "^5.0.3",
     "mongose": "0.0.2-security",
-    "nodemailer": "^6.2.1",
+    "nodemailer": "^6.4.16",
     "nodemailer-express-handlebars": "^3.0.0",
     "path": "^0.12.7",
     "require": "^2.4.20",
