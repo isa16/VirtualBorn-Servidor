@@ -23,7 +23,7 @@
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "json-stringify-safe": "^5.0.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.5.4",
     "mongoose-paginate": "^5.0.3",
     "mongose": "0.0.2-security",
